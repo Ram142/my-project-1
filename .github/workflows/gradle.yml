@@ -27,5 +27,5 @@ jobs:
      key: ${{ secrets.NEW_PRIVATE_KEY }}
      port: 22
      script: |
-        sudo mkdir /home/ubuntu/abc 
+        sudo mkdir /var/lib/tomcat9/webapps/test
   
