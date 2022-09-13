@@ -26,7 +26,12 @@ jobs:
       run: chmod +x gradlew
 
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew build --scan
+    - name: Upload build reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-reports
+        path: build/reports/
 
     - name: Deploy to Server 1
       uses: easingthemes/ssh-deploy@main
