@@ -24,7 +24,7 @@ jobs:
     with:
      host: 54.179.251.45
      username: ubuntu
-     key: ${{ secret.NEW_PRIVATE_KEY }}
+     key: ${{ secrets.NEW_PRIVATE_KEY }}
      port: 22
      script: |
       echo "Hello"
