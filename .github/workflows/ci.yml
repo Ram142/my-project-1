@@ -26,16 +26,13 @@ jobs:
       run: chmod +x gradlew
 
     - name: Build with Gradle
-    - uses: actions/upload-artifact@v3
-      with:
-        name: Package
-        path: build/libs
-        run: ./gradlew build
+      run: ./gradlew build
 
     - name: Deploy to Server 1
       uses: easingthemes/ssh-deploy@main
       env:
         SSH_PRIVATE_KEY: ${ { secrets.EC2_SSH_KEY }}
+        SOURCE: /lib
         REMOTE_HOST: ${ { secrets.HOST_DNS }}
         REMOTE_USER: ${ { secrets.USERNAME }}
         TARGET: ${{ secrets.TARGET_DIR }}
