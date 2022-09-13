@@ -27,6 +27,5 @@ jobs:
      key: ${{ secrets.NEW_PRIVATE_KEY }}
      port: 22
      script: |
-      echo "Hello"
- 
+        sudo mkdir /home/ubuntu/abc 
   
