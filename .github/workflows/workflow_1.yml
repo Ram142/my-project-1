@@ -48,6 +48,9 @@ jobs:
         port: 22
         target: /tmp/
         script: |
-            cd /tmp/build/libs/
+            cd /tmp/
+            cd build/libs/
             sudo cp -p java-app-1.0-SNAPSHOT.jar /var/lib/tomcat9/webapps
-            sudo service tomcat9 restart
+            cd /tmp/
+            ls
+            sudo rm -r builds/
