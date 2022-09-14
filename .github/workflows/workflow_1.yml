@@ -48,11 +48,6 @@ jobs:
         port: 22
         target: /tmp/
         script: |
-            echo "i am here"
             cd /tmp/build/libs/
-            echo "i am here2"
             sudo cp -p java-app-1.0-SNAPSHOT.jar /var/lib/tomcat9/webapps
-            echo "i am here3"
-            cd /tmp/build/libs/
-            echo "i am here4"
             sudo service tomcat9 restart
