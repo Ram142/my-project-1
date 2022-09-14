@@ -37,5 +37,13 @@ jobs:
         key: ${{ secrets.NEW_PRIVATE_KEY }}
         port: 22
         target: /tmp/
+      
+     - name: ssh connection
+       uses: appleboy/ssh-action@master
+       with:
+        host: 54.179.251.45
+        username: ubuntu
+        key: ${{ secrets.NEW_PRIVATE_KEY }}
+        port: 22
         script: |
-          sudo mkdir /home/ubuntu/hell
+          sudo mkdir /home/ubuntu/fu 
