@@ -43,12 +43,14 @@ jobs:
      - name: ssh connection
        uses: appleboy/ssh-action@master
        with:
+        SOURCE: "build/libs/"
         host: 54.179.251.45
         username: ubuntu
         key: ${{ secrets.NEW_PRIVATE_KEY }}
         port: 22
         script: |
-          sudo rmdir /var/lib/tomcat9/webapps/test3    
+          sudo rmdir /var/lib/tomcat9/webapps/test3
+          
           
 
      
