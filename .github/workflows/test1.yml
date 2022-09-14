@@ -51,4 +51,3 @@ jobs:
             sudo mv /tmp/build/libs/java-app-1.0-SNAPSHOT.jar /var/lib/tomcat9/webapps/demo.jar
             cd /tmp/
             sudo rm -r build/
-            echo "hello"
