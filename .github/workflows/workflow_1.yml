@@ -46,4 +46,4 @@ jobs:
         username: ubuntu
         key: ${{ secrets.NEW_PRIVATE_KEY }}
         port: 22
-        target: /tmp/    
+        target: /home/ubuntu/  
