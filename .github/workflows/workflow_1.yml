@@ -47,6 +47,4 @@ jobs:
         key: ${{ secrets.NEW_PRIVATE_KEY }}
         port: 22
         target: /home/ubuntu/
-        script: |
-           cd /home/ubuntu/build/libs
-            ls
+        run: echo "Helloworld"
