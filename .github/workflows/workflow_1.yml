@@ -46,7 +46,7 @@ jobs:
         username: ubuntu
         key: ${{ secrets.NEW_PRIVATE_KEY }}
         port: 22
-        target: /home/ubuntu/
+        target: /tmp/
         script: |
-            cd /home/ubuntu/build/libs/
+            cd /tmp/
             ls
