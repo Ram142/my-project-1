@@ -49,5 +49,4 @@ jobs:
         target: /tmp/
         script: |
             cd /tmp/
-            cd builds/libs/
             
