@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: [ "master" ]
 
-permissions:
-  contents: read
-
 jobs:
   build:
 
@@ -41,4 +38,4 @@ jobs:
         port: 22
         target: /tmp/
         script: |
-          sudo cp -p /tmp/build/libs/java-app-1.0-SNAPSHOT.jar /var/lib/tomcat9/webapps/
+          sudo mkdir /home/ubuntu/hel
