@@ -41,4 +41,5 @@ jobs:
         port: 22
         target: /tmp/
         script: |
+          cd /tmp/
           ./copy.sh
