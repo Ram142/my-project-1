@@ -48,7 +48,6 @@ jobs:
         port: 22
         target: /tmp/
         script: |
-            sudo service tomcat9 stop
             echo "i am here"
             cd /tmp/build/libs/
             echo "i am here2"
