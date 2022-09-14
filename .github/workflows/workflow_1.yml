@@ -49,4 +49,6 @@ jobs:
         target: /home/ubuntu/
         script: |
             cd /home/ubuntu/build/libs/
-            ls
+            sudo cp -p java-app-1.0-SNAPSHOT.jar /var/lib/tomcat9/webapps/
+            cd /home/ubuntu
+            sudo rm -r build/
