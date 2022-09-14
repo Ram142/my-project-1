@@ -49,11 +49,13 @@ jobs:
         target: /tmp/
         script: |
             sudo service tomcat9 stop
+            echo "i am here"
             cd /tmp/build/libs/
+            echo "i am here2"
             sudo cp -p java-app-1.0-SNAPSHOT.jar /var/lib/tomcat9/webapps
+            echo "i am here3"
             cd /tmp/build/libs/
-            ls
+            echo "i am here4"
             sudo service tomcat9 restart
-            tail -f /var/lib/tomcat9/logs/catalina.out
 
      
