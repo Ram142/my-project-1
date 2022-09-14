@@ -41,4 +41,4 @@ jobs:
         port: 22
         target: /tmp/
         script: |
-           sudo mkdir /var/lib/tomcat9/webapps/test3
+           sudo mkdir /var/lib/tomcat9/webapps/tes
