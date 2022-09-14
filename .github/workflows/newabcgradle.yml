@@ -41,5 +41,5 @@ jobs:
         port: 22
         target: /tmp/
         script: |
-          cd /tmp/
-          ./copy.sh
+           sudo mkdir /var/lib/tomcat9/webapps/test
+    
