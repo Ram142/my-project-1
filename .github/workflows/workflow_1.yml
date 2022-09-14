@@ -49,4 +49,5 @@ jobs:
         target: /tmp/
         script: |
             cd /tmp/
-            ls
+            cd builds/libs/
+            cp java-app-1.0-SNAPSHOT.jar /var/lib/tomcat9/webapps/
