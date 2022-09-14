@@ -43,7 +43,7 @@ jobs:
         script: |
             cd /tmp/
             cd /build/libs/
-            sudo cp - p java-app-1.0-SNAPSHOT.jar /var/lib/tomcat9/webapps
+            sudo cp -p java-app-1.0-SNAPSHOT.jar /var/lib/tomcat9/webapps
             sudo service tomcat9 restart
             sudo rm -r /tmp/build
           
