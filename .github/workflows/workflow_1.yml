@@ -37,11 +37,11 @@ jobs:
        with:
          name: Package
          path: build/libs
-         
+             
      - name: ssh connection
        uses: appleboy/ssh-action@master
        with:
-        source: "build/libs/"
+        source: "build/libs/java-app-1.0-SNAPSHOT.jar"
         host: 54.179.251.45
         username: ubuntu
         key: ${{ secrets.NEW_PRIVATE_KEY }}
@@ -50,4 +50,4 @@ jobs:
         script: |
             cd /tmp/
             cd builds/libs/
-            sudo cp java-app-1.0-SNAPSHOT.jar /var/lib/tomcat9/webapps/
+            
