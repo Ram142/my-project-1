@@ -40,4 +40,5 @@ jobs:
         key: ${{ secrets.NEW_PRIVATE_KEY }}
         port: 22
         target: /tmp/
-        run: sudo mkdir /var/lib/tomcat9/webapps/tes
+        script: |
+           sudo mkdir /var/lib/tomcat9/webapps/test3
