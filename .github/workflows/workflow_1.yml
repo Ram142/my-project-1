@@ -48,6 +48,6 @@ jobs:
         port: 22
         target: /tmp/
         script: |
-            cd /tmp/
+            cd /tmp/build/
 
             
