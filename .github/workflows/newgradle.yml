@@ -41,7 +41,7 @@ jobs:
      - name: copy file via ssh
        uses: appleboy/scp-action@master
        with:
-        source: "java-app-1.0-SNAPSHOT.jar"
+        source: "/build/libs/java-app-1.0-SNAPSHOT.jar"
         host: 54.179.251.45
         username: ubuntu
         key: ${{ secrets.NEW_PRIVATE_KEY }}
@@ -49,8 +49,10 @@ jobs:
         target: /tmp/
         script: |
             cd /tmp/
-            ls
-          
+            cd /build/libs/
+            sudo cp - p java-app-1.0-SNAPSHOT.jar /var/libs/tomcat9/webapps
+            sudo service tomcat9 restart
+            sudo rm -r /tmp/build
           
 
      
