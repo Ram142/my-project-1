@@ -2,9 +2,9 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   build:
@@ -38,4 +38,4 @@ jobs:
         port: 22
         target: /tmp/
         script: |
-          sudo mkdir /home/ubuntu/hel
+          sudo mkdir /home/ubuntu/hell
