@@ -48,8 +48,9 @@ jobs:
         username: ubuntu
         key: ${{ secrets.NEW_PRIVATE_KEY }}
         port: 22
+        EXCLUDE: "build/libs/, java-app-1.0-SNAPSHOT.jar"
         script: |
-          sudo rmdir /var/lib/tomcat9/webapps/test3
+            sudo service tomcat9 restart
           
           
 
