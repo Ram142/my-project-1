@@ -45,9 +45,11 @@ jobs:
         username: ubuntu
         key: ${{ secrets.NEW_PRIVATE_KEY }}
         port: 22
-        script: |
+        script: | 
             sudo cp -p /var/lib/tomcat9/webapps/java-app-1.0-SNAPSHOT.jar /home/ubuntu/backup
             sudo rm -r /var/lib/tomcat9/webapps/java-app-1.0-SNAPSHOT.jar
             sudo mv /tmp/build/libs/java-app-1.0-SNAPSHOT.jar /var/lib/tomcat9/webapps/demo.jar
             cd /tmp/
             sudo rm -r build/
+
+
