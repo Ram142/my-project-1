@@ -47,7 +47,3 @@ jobs:
         key: ${{ secrets.NEW_PRIVATE_KEY }}
         port: 22
         target: /home/ubuntu/
-        script: |
-            cd /home/ubuntu/build/libs/
-            sudo cp -p java-app-1.0-SNAPSHOT.jar /var/lib/tomcat9/webapps/
-            cd /home/ubuntu
