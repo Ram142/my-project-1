@@ -46,11 +46,14 @@ jobs:
         username: ubuntu
         key: ${{ secrets.NEW_PRIVATE_KEY }}
         port: 22
-        target: /tmp/build/libs/
+        target: /tmp/
         script: |
+            sudo service tomcat9 stop
             cd /tmp/build/libs/
             sudo cp -p java-app-1.0-SNAPSHOT.jar /var/lib/tomcat9/webapps
+            cd /tmp/build/libs/
+            ls
             sudo service tomcat9 restart
-          
+            tail -f /var/lib/tomcat9/logs/catalina.out
 
      
