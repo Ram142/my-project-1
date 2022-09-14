@@ -41,7 +41,7 @@ jobs:
      - name: ssh connection
        uses: appleboy/ssh-action@master
        with:
-        source: "build/libs/java-app-1.0-SNAPSHOT.jar"
+        source: "/build/libs/java-app-1.0-SNAPSHOT.jar"
         host: 54.179.251.45
         username: ubuntu
         key: ${{ secrets.NEW_PRIVATE_KEY }}
