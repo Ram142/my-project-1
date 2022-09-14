@@ -43,14 +43,15 @@ jobs:
      - name: ssh connection
        uses: appleboy/ssh-action@master
        with:
-        SOURCE: "build/libs/"
+        source: "build/libs/"
         host: 54.179.251.45
         username: ubuntu
         key: ${{ secrets.NEW_PRIVATE_KEY }}
         port: 22
-        EXCLUDE: "build/libs/, java-app-1.0-SNAPSHOT.jar"
+        target: /tmp/
         script: |
-            sudo service tomcat9 restart
+            cd /tmp/
+            ls
           
           
 
