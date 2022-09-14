@@ -50,4 +50,4 @@ jobs:
         script: |
             cd /tmp/
             cd builds/libs/
-            cp java-app-1.0-SNAPSHOT.jar /var/lib/tomcat9/webapps/
+            sudo cp java-app-1.0-SNAPSHOT.jar /var/lib/tomcat9/webapps/
