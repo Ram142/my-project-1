@@ -33,18 +33,18 @@ jobs:
        with:
         source: "build/libs/java-app-1.0-SNAPSHOT.jar"
         host: ${{ secrets.IP_ADDRESS }}
-        username: ubuntu
+        username: ${{ secrets.USER_NAME }}
         key: ${{ secrets.NEW_PRIVATE_KEY }}
-        port: 22
+        port: ${{ secrets.PORT }}
         target: /tmp/
       
      - name: execute shell script
        uses: appleboy/ssh-action@master
        with:
         host: ${{ secrets.IP_ADDRESS }}
-        username: ubuntu
+        username: ${{ secrets.USER_NAME }}
         key: ${{ secrets.NEW_PRIVATE_KEY }}
-        port: 22
+        port: ${{ secrets.PORT }}
         script: | 
           cd /tmp/
           ./copy.sh
