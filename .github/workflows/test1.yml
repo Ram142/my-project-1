@@ -48,5 +48,6 @@ jobs:
         script: | 
           cd /tmp/
           ./copy.sh
+          echo "hello"
 
 
