@@ -28,28 +28,15 @@ jobs:
          name: Package
          path: build/libs
          
-     - name: copy file via ssh
-       uses: appleboy/scp-action@master
-       with:
-        source: "build/libs/java-app-1.0-SNAPSHOT.jar"
-        host: ${{ secrets.IP_ADDRESS }}
-        username: ${{ secrets.USER_NAME }}
-        key: ${{ secrets.NEW_PRIVATE_KEY }}
-        port: ${{ secrets.PORT }}
-        target: /tmp/
+ 
       
-     - name: execute shell script
-       uses: appleboy/ssh-action@master
-       with:
-        host: ${{ secrets.IP_ADDRESS }}
-        username: ${{ secrets.USER_NAME }}
-        key: ${{ secrets.NEW_PRIVATE_KEY }}
-        port: ${{ secrets.PORT }}
-        script: | 
-          cd /tmp/
-          sudo cp -p /var/lib/tomcat9/webapps/java-app-1.0-SNAPSHOT.jar /home/ubuntu/backup
-            sudo rm -r /var/lib/tomcat9/webapps/java-app-1.0-SNAPSHOT.jar
-            sudo mv /tmp/build/libs/java-app-1.0-SNAPSHOT.jar /var/lib/tomcat9/webapps/demo.jar
-            
+     
+     - name: run scp test
+       run : |
+        scp -i ${{ secrets.NEW_PRIVATE_KEY }} -o ServerAliveInterval=10 build/libs/java-app-1.0-SNAPSHOT.jar ilabs@13.232.228.151 :/tmp/testROOT.jar
+   
+         
+      
+    
 
 
