@@ -31,10 +31,8 @@ jobs:
  
       
      
-     - name: run scp test
-       run : |
-        scp -i ${{ secrets.NEW_PRIVATE_KEY }} -o ServerAliveInterval=10 build/libs/java-app-1.0-SNAPSHOT.jar ilabs@13.232.228.151 :/tmp/testROOT.jar
-   
+     - name: Deploy with rsync
+       run: rsync -avz upee-dashboard/build/libs/ ilabs@${{ secrets.IP_ADDRESS }}:/home/ilabs/test
          
       
     
