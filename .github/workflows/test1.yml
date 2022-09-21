@@ -29,9 +29,16 @@ jobs:
          path: build/libs
          
    
-     - name: run scp test
-       run : |
-        ssh -i ${{ secrets.NEW_PRIVATE_KEY }} ilabs@13.232.228.151
+     - uses: appleboy/ssh-action@master
+       with:
+        host: 13.232.228.151
+        username: ilabs
+        key: ${{ secrets.NEW_PRIVATE_KEY }}
+        port: 22
+        script: |
+            cd /tmp/
+            ls
+
     
 
 
