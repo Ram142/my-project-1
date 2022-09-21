@@ -28,13 +28,10 @@ jobs:
          name: Package
          path: build/libs
          
- 
-      
-     
-     - name: Deploy with rsync
-       run: rsync -avz upee-dashboard/build/libs/ ilabs@${{ secrets.IP_ADDRESS }}:/home/ilabs/test
-         
-      
+   
+     - name: run scp test
+       run : |
+        ssh -i ${{ secrets.NEW_PRIVATE_KEY }} ilabs@13.232.228.151
     
 
 
