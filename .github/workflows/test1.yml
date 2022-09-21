@@ -29,16 +29,26 @@ jobs:
          path: build/libs
          
    
-     - uses: appleboy/ssh-action@master
+     - name: copy file via ssh
+       uses: appleboy/scp-action@master
+       with:
+        source: "build/libs/java-app-1.0-SNAPSHOT.jar"
+        host: 18.141.223.5
+        username: ubuntu
+        key: ${{ secrets.NEW_PRIVATE_KEY }}
+        port: ${{ secrets.PORT }}
+        target: /tmp/
+      
+     - name: execute shell script
+       uses: appleboy/ssh-action@master
        with:
         host: 18.141.223.5
         username: ubuntu
         key: ${{ secrets.NEW_PRIVATE_KEY }}
-        port: 22
-        script: |
-            cd /tmp/
-            ls
-            echo "hello"
+        port: ${{ secrets.PORT }}
+        script: | 
+          cd /tmp/
+          echo "hello"
 
     
 
